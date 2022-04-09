@@ -15,4 +15,4 @@ jobs:
         password: "python"
         port: 22
         source: "./*"
-        target: "/var/www/html/php/"
+        target: "/var/www/html/php"

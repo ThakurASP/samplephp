@@ -29,6 +29,6 @@ jobs:
         username: "user1"
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          chmod +x ./moveFiles.sh
+          ./moveFiles.sh
         
 

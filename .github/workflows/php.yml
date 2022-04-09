@@ -23,7 +23,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Deployment
-      uses: appleboy/ssh-action@main
+      uses: appleboy/ssh-action@master
       with:
         host: 172.105.34.69
         username: "user1"

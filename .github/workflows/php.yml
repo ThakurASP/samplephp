@@ -2,7 +2,7 @@ name: scp files
 on: [push]
 jobs:
 
-  build:
+  deploy:
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -16,3 +16,22 @@ jobs:
         port: 22
         source: "./*"
         target: "php"
+      
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Deployment
+      uses: appleboy/ssh-action@main
+      with:
+        host: 172.105.34.69
+        username: "user1"
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd /var/www/html/
+          rm -r php
+          cd ~
+          mv php /var/wwww/html/
+        
+

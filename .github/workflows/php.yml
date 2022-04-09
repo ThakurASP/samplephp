@@ -1,32 +1,18 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+name: scp files
+on: [push]
 jobs:
-  deploy-via-sftp:
+
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
-        with:
-          username: user1
-          server: 172.105.34.69
-          port: 22
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          local_path: ./*
-          remote_path: /var/www/html/php
-          args: '-o ConnectTimeout=5'
+    - uses: actions/checkout@master
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@master
+      with:
+        host: 172.105.34.69
+        username: "user1"
+        password: "python"
+        port: 22
+        source: "./*"
+        target: "test"

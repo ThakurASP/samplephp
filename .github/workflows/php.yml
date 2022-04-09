@@ -32,6 +32,6 @@ jobs:
           cd /var/www/html/
           rm -r php
           cd ~
-          mv php /var/wwww/html/
+          mv php /var/www/html/
         
 

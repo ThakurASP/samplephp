@@ -29,9 +29,6 @@ jobs:
         username: "user1"
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          cd /var/www/html/
-          rm -r php
-          cd ~
-          sudo mv php /var/www/html/
+          chmod +x ./moveFiles.sh
         
 

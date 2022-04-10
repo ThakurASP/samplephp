@@ -18,7 +18,7 @@ jobs:
         target: "php"
       
   copy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -29,6 +29,7 @@ jobs:
         username: "user1"
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          ./moveFiles.sh
+          cd ~
+          mv php /var/www/html/
         
 

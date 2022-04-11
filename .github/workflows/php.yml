@@ -18,18 +18,27 @@ jobs:
         target: "php"
       
   copy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    #- name: Deployment
-    #  uses: appleboy/ssh-action@master
-      with:
-        #host: 172.105.34.69
-        #username: "user1"
-        #key: ${{ secrets.SSH_PRIVATE_KEY }}
-        run:
+      - name: Hello world
+        shell: bash
+        run: |
           cd ~
-          mv php /var/www/html/
-        
+          mv php /var/www/html/ 
+      
+#   copy:
+#     runs-on: self-hosted
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2
+#     #- name: Deployment
+#     #  uses: appleboy/ssh-action@master
+#       with:
+#         #host: 172.105.34.69
+#         #username: "user1"
+#         #key: ${{ secrets.SSH_PRIVATE_KEY }}
+#         run:
+#           cd ~
+#           mv php /var/www/html/
+#         name-of-job:
 

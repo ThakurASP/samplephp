@@ -34,9 +34,9 @@ jobs:
     - name: Deployment
       uses: appleboy/ssh-action@master
       with:
-        host: 172.105.34.69
-        username: "user1"
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        #host: 172.105.34.69
+        #username: "user1"
+        #key: ${{ secrets.SSH_PRIVATE_KEY }}
         scripts: |
           cd ~
           mv php /var/www/html/

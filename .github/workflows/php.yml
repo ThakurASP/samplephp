@@ -28,7 +28,7 @@ jobs:
         #host: 172.105.34.69
         #username: "user1"
         #key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
+        run:
           cd ~
           mv php /var/www/html/
         

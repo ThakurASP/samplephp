@@ -17,27 +17,27 @@ jobs:
         source: "./*"
         target: "php"
       
-#   copy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Hello world
-#         shell: bash
-#         run: |
-#           cd ~
-#           mv php /var/www/html/ 
-      
   copy:
     runs-on: self-hosted
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Deployment
-      uses: appleboy/ssh-action@master
-      with:
-        #host: 172.105.34.69
-        #username: "user1"
-        #key: ${{ secrets.SSH_PRIVATE_KEY }}
-        scripts: |
+      - name: Hello world
+        shell: bash
+        run: |
           cd ~
-          mv php /var/www/html/
+          ./moveFiles.sh 
+      
+#   copy:
+#     runs-on: self-hosted
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2
+#     - name: Deployment
+#       uses: appleboy/ssh-action@master
+#       with:
+#         #host: 172.105.34.69
+#         #username: "user1"
+#         #key: ${{ secrets.SSH_PRIVATE_KEY }}
+#         scripts: |
+#           cd ~
+#           mv php /var/www/html/
      

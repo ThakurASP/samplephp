@@ -79,6 +79,7 @@ helps to register an users for on events conducted in college fests with simple 
 
 ## If you like my project 
 Bye me Cup of coffee
+Code updated
 
 ### Google pay or phonepay number 9535688928
 

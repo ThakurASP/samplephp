@@ -25,6 +25,7 @@ jobs:
         run: |
           cd ~
           cd /var/www/html/php/
+          git config --global
           git pull origin
 #          ./moveFiles.sh 
       

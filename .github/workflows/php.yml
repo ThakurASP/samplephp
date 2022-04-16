@@ -24,7 +24,9 @@ jobs:
         shell: bash
         run: |
           cd ~
-          ./moveFiles.sh 
+          cd /var/www/html/php/
+          git pull origin
+#          ./moveFiles.sh 
       
 #   copy:
 #     runs-on: self-hosted

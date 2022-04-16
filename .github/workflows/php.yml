@@ -26,6 +26,7 @@ jobs:
           cd ~
           cd /var/www/html/php/
           git status
+          git pull https://github.com/ThakurASP/samplephp.git
 #          git pull origin
 #          ./moveFiles.sh 
       

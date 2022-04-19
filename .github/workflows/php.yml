@@ -2,7 +2,7 @@ name: scp files
 on: [push]
 jobs:
 
-  deploy:
+  copy:
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -10,23 +10,23 @@ jobs:
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
       with:
-        host: 172.105.34.69
-        username: "user1"
-        password: "python"
+        host: 45.79.123.122
+        username: "anurag"
+        password: "Anurag@!234"
         port: 22
         source: "./*"
         target: "php"
       
-  copy:
-    runs-on: self-hosted
-    steps:
-      - name: Hello world
-        shell: bash
-        run: |
-          cd ~
-          cd /var/www/html/php/
-          git status
-          git pull
+#   deploy:
+#     runs-on: self-hosted
+#     steps:
+#       - name: Hello world
+#         shell: bash
+#         run: |
+#           cd ~
+#           cd /var/www/html/php/
+#           git status
+#           git pull
 #          git pull origin
 #          ./moveFiles.sh 
       

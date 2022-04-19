@@ -1,32 +1,32 @@
-name: scp files
+name: Deploy
 on: [push]
 jobs:
 
-  copy:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: copy file via ssh password
-      uses: appleboy/scp-action@master
-      with:
-        host: 45.79.123.122
-        username: "anurag"
-        password: "Anurag@!234"
-        port: 22
-        source: "./*"
-        target: "php"
-      
-#   deploy:
-#     runs-on: self-hosted
+#   copy:
+#     name: Build
+#     runs-on: ubuntu-latest
 #     steps:
-#       - name: Hello world
-#         shell: bash
-#         run: |
-#           cd ~
-#           cd /var/www/html/php/
-#           git status
-#           git pull
+#     - uses: actions/checkout@master
+#     - name: copy file via ssh password
+#       uses: appleboy/scp-action@master
+#       with:
+#         host: 45.79.123.122
+#         username: "anurag"
+#         password: "Anurag@!234"
+#         port: 22
+#         source: "./*"
+#         target: "php"
+      
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Hello world
+        shell: bash
+        run: |
+          cd ~
+          cd /var/www/html/php/
+          git status
+          git pull
 #          git pull origin
 #          ./moveFiles.sh 
       
